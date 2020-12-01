@@ -5,4 +5,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="corner_radius_cardview">4dp</dimen>
     <dimen name="Barra">50dp</dimen>
+    <dimen name="NombreMio">40dp</dimen>
+    <dimen name="etContacto">370dp</dimen>
+    <dimen name="AnchoMensaje">380dp</dimen>
+    <dimen name="CircleImageView">200dp</dimen>
 </resources>

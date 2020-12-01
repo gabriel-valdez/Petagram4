@@ -3,14 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <item
-        android:id = "@+id/opcion1"
-        android:title="@string/Opcion1"  />
+        android:id = "@+id/Contacto"
+        android:title="@string/Contacto"  />
     <item
-        android:id = "@+id/opcion2"
-        android:title="@string/Opcion2" />
-    <item
-        android:id = "@+id/opcion3"
-        android:title="@string/Opcion3" />
+        android:id = "@+id/AcercaDe"
+        android:title="@string/AcercaDe" />
 
     <item
         android:id="@+id/Favoritos"

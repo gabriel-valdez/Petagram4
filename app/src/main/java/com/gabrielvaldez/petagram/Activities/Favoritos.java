@@ -1,4 +1,4 @@
-package com.gabrielvaldez.petagram;
+package com.gabrielvaldez.petagram.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Switch;
+
+import com.gabrielvaldez.petagram.R;
 
 public class Favoritos extends AppCompatActivity {
 

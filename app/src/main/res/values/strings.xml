@@ -1,10 +1,22 @@
 <resources>
     <string name="app_name">Petagram</string>
-    <string name="Opcion1">Opcion 1</string>
-    <string name="Opcion2">Opcion 2</string>
-    <string name="Opcion3">Opcion 3</string>
+    <string name="Contacto">Contacto</string>
+    <string name="AcercaDe">Acerca de</string>
     <string name="Favoritos">Favoritos</string>
     <string name="Icono">Icono</string>
     <string name="Nombre">Nombre</string>
     <string name="Raiting">5</string>
+    <string name="Descripcion">
+        Me llamo Gabriel Valdez, tengo 19 años y vivo en la ciudad de Mar del Plata en Argentina.
+        Estudio ingenieria en informatica en la Universidad Nacional de Mar del Plata.
+    </string>
+    <string name="NombreContacto">Ingrese su nombre</string>
+    <string name="EmailContacto">Ingrese su email</string>
+    <string name="MensajeContacto">Ingrese su mensaje</string>
+    <string name="Comentario">Enviar Comentario</string>
+    <string name="NombreMio">Gabriel Valdez</string>
+    <string name="NombreMario">Mario</string>
+    <string name="todo">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

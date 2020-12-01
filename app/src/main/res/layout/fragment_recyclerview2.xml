@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aplicación="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/CircleImageView">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:pp="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_below="@id/miActionBar"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/perro"
+            aplicación:civ_border_color="@color/black"
+            aplicación:civ_border_width="2dp"
+            tools:ignore="ObsoleteLayoutParam"
+
+            />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="26dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="165dp"
+            android:layout_below="@id/profile_image"
+            android:text="@string/NombreMario"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/MiPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/profile_image"
+        tools:ignore="ObsoleteLayoutParam" />
+
+
+</LinearLayout>

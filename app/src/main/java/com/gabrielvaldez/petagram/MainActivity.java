@@ -3,55 +3,61 @@ package com.gabrielvaldez.petagram;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+
+import com.gabrielvaldez.petagram.Activities.Contacto;
+import com.gabrielvaldez.petagram.Adapter.PageAdapter;
+import com.gabrielvaldez.petagram.Fragments.RecyclerView_Fragment1;
+import com.gabrielvaldez.petagram.Fragments.RecyclerView_Fragment2;
+import com.gabrielvaldez.petagram.Pojo.Mascotas;
+import com.gabrielvaldez.petagram.Adapter.MascotaAdaptador;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList <Mascotas> mascotas ;
-    private RecyclerView listaMascotas;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tabLayout = (TabLayout) findViewById(R.id.TabLayout);
+        viewPager = (ViewPager) findViewById(R.id.ViewPager);
+
+        setUpViewPager();
+
         Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        listaMascotas = (RecyclerView) findViewById(R.id.Mascotas);
-
-        LinearLayoutManager Llm = new LinearLayoutManager(this);
-        Llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        listaMascotas.setLayoutManager(Llm);
-        InicializarListaMascotas();
-        inicializarAdaptador();
     }
 
-    public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
-        listaMascotas.setAdapter(adaptador);
+    private ArrayList<Fragment> agregarFraments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new RecyclerView_Fragment1());
+        fragments.add(new RecyclerView_Fragment2());
+        return fragments;
     }
 
-    public void InicializarListaMascotas(){
-        mascotas = new ArrayList <Mascotas>();
+    public void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFraments()));
+        tabLayout.setupWithViewPager(viewPager);
 
-        mascotas.add(new Mascotas(R.drawable.perro,R.drawable.ic_hueso, R.drawable.ic_dog_bone_icon_134489, "Mario","4"));
-        mascotas.add(new Mascotas(R.drawable.cerdo_animado,R.drawable.ic_hueso, R.drawable.ic_dog_bone_icon_134489,"Timmy","5"));
-        mascotas.add(new Mascotas(R.drawable.gato,R.drawable.ic_hueso, R.drawable.ic_dog_bone_icon_134489,"Tom","2"));
-        mascotas.add(new Mascotas(R.drawable.hamnster,R.drawable.ic_hueso, R.drawable.ic_dog_bone_icon_134489,"Jerry","3"));
-        mascotas.add(new Mascotas(R.drawable.nutria, R.drawable.ic_hueso, R.drawable.ic_dog_bone_icon_134489,"Arturo","1"));
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_casa);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_perro);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -61,12 +67,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if(id == R.id.Favoritos){
-            Intent Favoritos = new Intent(MainActivity.this,Favoritos.class);
-            startActivity(Favoritos);
+        switch (item.getItemId()) {
+            case R.id.Favoritos:
+                Intent Favoritos = new Intent(MainActivity.this, com.gabrielvaldez.petagram.Activities.Favoritos.class);
+                startActivity(Favoritos);
+                break;
+            case R.id.Contacto:
+                Intent Contactos = new Intent(MainActivity.this, Contacto.class);
+                startActivity(Contactos);
+                break;
+            case R.id.AcercaDe:
+                Intent AcercaDe = new Intent(MainActivity.this, com.gabrielvaldez.petagram.Activities.AcercaDe.class);
+                startActivity(AcercaDe);
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

@@ -31,10 +31,10 @@
             >
 
             <ImageView
+                android:id="@+id/HuesoBlanco"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_hueso"
-                android:id = "@+id/HuesoBlanco"
                 />
 
            <TextView
@@ -56,13 +56,15 @@
                 android:textSize="35sp"
                 android:textStyle="bold"
                 />
-            <ImageView
+
+            <ImageButton
+                android:id="@+id/HuesoAmarillo"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="5dp"
                 android:background="@drawable/ic_dog_bone_icon_134489"
-                android:id = "@+id/HuesoAmarillo"
-                />
+
+                 />
 
         </LinearLayout>
         
